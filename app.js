@@ -9,10 +9,14 @@ function sortear(){
 
     for (let i = 1; i <= quantidade; i++){
         numero = obterNumeroAleatorio(de, ate);
+        while (sorteados.includes(numero)) {
+            numero = obterNumeroAleatorio(de, ate);
+        }; // includes devolve um booleano
         sorteados.push(numero);
-    }
+    };
 
-    alert(sorteados)
+    let resultado = document.getElementById('resultado');
+    resultado.innerHTML = `<label class="texto__paragrafo">Números sorteados: ${sorteados}</label>`;
 
 }
 
