@@ -4,6 +4,11 @@ function sortear(){
     let de = parseInt(document.getElementById('de').value);
     let ate = parseInt(document.getElementById('ate').value);
 
+    if (de >= ate || quantidade > ate - de + 1){
+        alert('Reveja os números digitados');
+        return; // Faz com que a função seja interrompida nesse ponto
+    }
+
     let sorteados = [];
     let numero;
 
